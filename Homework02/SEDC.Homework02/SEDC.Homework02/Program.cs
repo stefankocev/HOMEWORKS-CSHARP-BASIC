@@ -13,8 +13,8 @@ namespace SEDC.Homework02
             Console.WriteLine("Please enter the second number");
             int secondNumber = 0;
             bool secondInputToNumber = int.TryParse(Console.ReadLine(), out secondNumber);
-
-            if (firstNumber > secondNumber)
+            if(firstInputToNumber == true && secondInputToNumber == true){
+                 if (firstNumber > secondNumber)
             {
                 Console.WriteLine(firstNumber + " is bigger than " + secondNumber);
                 int biggerNumber = firstNumber;
@@ -44,13 +44,19 @@ namespace SEDC.Homework02
             {
                 Console.WriteLine("Numbers are equal.");
             }
+            }else
+            {
+                Console.WriteLine("There was an error!");
+            }
+           
             #endregion
 
             #region Exercise VII
             Console.WriteLine("Please enter a number from 1 to 3");
             int enteredNumber = 0;
             bool inputToNumber = int.TryParse(Console.ReadLine(), out enteredNumber);
-            switch (enteredNumber)
+            if(inputToNumber == true){
+                switch (enteredNumber)
             {
                 case 1:
                     Console.WriteLine("You got a new car!");
@@ -66,6 +72,11 @@ namespace SEDC.Homework02
                     break;
 
             }
+            }else
+            {
+                Console.WriteLine("There was an error!");
+            }
+            
             #endregion
 
             #region Task I
@@ -78,7 +89,8 @@ namespace SEDC.Homework02
             Console.WriteLine("Please enter the operation");
             char operation = '\0';
             bool operationInput = char.TryParse(Console.ReadLine(), out operation);
-            if(operation == '+')
+            if(aInputToNumber == true && bInputToNumber == true && operationInput == true){
+                if(operation == '+')
             {
                 double resultFromAdding = numberA + numberB;
                 Console.WriteLine("The result is: " + resultFromAdding);
@@ -101,6 +113,11 @@ namespace SEDC.Homework02
                 Console.WriteLine("There was an error");
             }
 
+            }else
+            {
+                Console.WriteLine("There was an error!");
+            }
+            
             #endregion
 
             #region Task II
@@ -116,8 +133,15 @@ namespace SEDC.Homework02
             Console.WriteLine("Enter the fourth number");
             double taskTwoNumberFour = 0;
             bool taskTwoInputFourToNumber = double.TryParse(Console.ReadLine(), out taskTwoNumberFour);
-            double averageFromFourNumbers = ( taskTwoNumberOne + taskTwoNumberTwo + taskTwoNumberThree + taskTwoNumberFour ) / 4;
+            if(taskTwoInputOneToNumber == true && taskTwoInputTwoToNumber == true && taskTwoInputThreeToNumber == true && taskTwoInputFourToNumber == true){
+                double averageFromFourNumbers = ( taskTwoNumberOne + taskTwoNumberTwo + taskTwoNumberThree + taskTwoNumberFour ) / 4;
             Console.WriteLine("The average of " + taskTwoNumberOne + ", " + taskTwoNumberTwo + ", " + taskTwoNumberThree +  " and " + taskTwoNumberFour + " is: " + averageFromFourNumbers);
+            }
+            else
+            {
+                Console.WriteLine("There was an error");
+            }
+            
             #endregion
 
             #region Task III
@@ -127,11 +151,17 @@ namespace SEDC.Homework02
             Console.WriteLine("Enter the second Number");
             int secondNumberForSwapping = 0;
             bool secondInputForSwappingToNumber = int.TryParse(Console.ReadLine(), out secondNumberForSwapping);
-            Console.WriteLine("Before swapping: First Number = " + firstNumberForSwapping + " Second Number = " + secondNumberForSwapping);
+            if(firstInputForSwappingToNumber == true && secondInputForSwappingToNumber == true){
+             Console.WriteLine("Before swapping: First Number = " + firstNumberForSwapping + " Second Number = " + secondNumberForSwapping);
             firstNumberForSwapping = firstNumberForSwapping + secondNumberForSwapping;
             secondNumberForSwapping = firstNumberForSwapping - secondNumberForSwapping;
             firstNumberForSwapping = firstNumberForSwapping - secondNumberForSwapping;
             Console.WriteLine("After swapping: First Number = " + firstNumberForSwapping + " Second Number = " + secondNumberForSwapping);
+            }else
+            {
+                Console.WriteLine("There was an error!");
+            }
+            
 
             #endregion
             Console.ReadLine();
