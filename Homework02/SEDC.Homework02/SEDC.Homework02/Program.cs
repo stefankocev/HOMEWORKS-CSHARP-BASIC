@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 
 namespace SEDC.Homework02
@@ -9,12 +10,11 @@ namespace SEDC.Homework02
         {
             #region Exercise VI
             Console.WriteLine("Please enter the first number");
-            int firstNumber;
-            bool firstInputToNumber = int.TryParse(Console.ReadLine(), out firstNumber);
+            bool firstNumberToInput = int.TryParse(Console.ReadLine(), out int firstNumber);
             Console.WriteLine("Please enter the second number");
-            int secondNumber;
-            bool secondInputToNumber = int.TryParse(Console.ReadLine(), out secondNumber);
-            if(firstInputToNumber && secondInputToNumber){
+            bool secondNumberToInput = int.TryParse(Console.ReadLine(), out int secondNumber);
+            if (firstNumberToInput && secondNumberToInput)
+            {
                  if (firstNumber > secondNumber)
             {
                 Console.WriteLine(firstNumber + " is bigger than " + secondNumber);
@@ -49,11 +49,14 @@ namespace SEDC.Homework02
             {
                 Console.WriteLine("There was an error!");
             }
+            Console.ReadLine();
 
             #endregion
 
             #region Exercise VII
             Console.ReadLine();
+            Console.WriteLine("Let me generate a random number for you ...");
+            Thread.Sleep(1500);
             Random random = new Random();
             int enteredNumber = random.Next(1,3);
                 switch (enteredNumber)
@@ -72,21 +75,19 @@ namespace SEDC.Homework02
                     break;
 
             }
-            
-            
+
+            Console.ReadLine();
             #endregion
 
             #region Task I
             Console.WriteLine("Please enter the first number");
-            double numberA;
-            bool aInputToNumber = double.TryParse(Console.ReadLine(), out numberA);
-            Console.WriteLine("Please enter the second number");
-            double numberB;
-            bool bInputToNumber = double.TryParse(Console.ReadLine(), out numberB);
-            Console.WriteLine("Please enter the operation");
-            char operation;
-            bool operationInput = char.TryParse(Console.ReadLine(), out operation);
-            if(aInputToNumber && bInputToNumber && operationInput){
+            bool inputAToNumber = double.TryParse(Console.ReadLine(), out double numberA);
+            Console.WriteLine("Enter the second number");
+            bool inputBToNumber = double.TryParse(Console.ReadLine(), out double numberB);
+            Console.WriteLine("Enter the operation");
+            bool inputOperation = char.TryParse(Console.ReadLine(), out char operation);
+            if (inputAToNumber && inputBToNumber && inputOperation )
+            {
                 if(operation == '+')
             {
                 double resultFromAdding = numberA + numberB;
@@ -114,22 +115,18 @@ namespace SEDC.Homework02
             {
                 Console.WriteLine("There was an error!");
             }
-            
+            Console.ReadLine();
             #endregion
 
             #region Task II
             Console.WriteLine("Enter the first number");
-            double taskTwoNumberOne = 0;
-            bool taskTwoInputOneToNumber = double.TryParse(Console.ReadLine(), out taskTwoNumberOne);
+            bool taskTwoInputOneToNumber = double.TryParse(Console.ReadLine(), out double taskTwoNumberOne);
             Console.WriteLine("Enter the second number");
-            double taskTwoNumberTwo = 0;
-            bool taskTwoInputTwoToNumber = double.TryParse(Console.ReadLine(), out taskTwoNumberTwo);
+            bool taskTwoInputTwoToNumber = double.TryParse(Console.ReadLine(), out double taskTwoNumberTwo);
             Console.WriteLine("Enter the third number");
-            double taskTwoNumberThree = 0;
-            bool taskTwoInputThreeToNumber = double.TryParse(Console.ReadLine(), out taskTwoNumberThree);
+            bool taskTwoInputThreeToNumber = double.TryParse(Console.ReadLine(), out double taskTwoNumberThree);
             Console.WriteLine("Enter the fourth number");
-            double taskTwoNumberFour = 0;
-            bool taskTwoInputFourToNumber = double.TryParse(Console.ReadLine(), out taskTwoNumberFour);
+            bool taskTwoInputFourToNumber = double.TryParse(Console.ReadLine(), out double taskTwoNumberFour);
             if(taskTwoInputOneToNumber && taskTwoInputTwoToNumber && taskTwoInputThreeToNumber && taskTwoInputFourToNumber){
                 double averageFromFourNumbers = ( taskTwoNumberOne + taskTwoNumberTwo + taskTwoNumberThree + taskTwoNumberFour ) / 4;
             Console.WriteLine("The average of " + taskTwoNumberOne + ", " + taskTwoNumberTwo + ", " + taskTwoNumberThree +  " and " + taskTwoNumberFour + " is: " + averageFromFourNumbers);
@@ -138,16 +135,14 @@ namespace SEDC.Homework02
             {
                 Console.WriteLine("There was an error");
             }
-            
+            Console.ReadLine();
             #endregion
 
             #region Task III
             Console.WriteLine("Enter the first Number");
-            int firstNumberForSwapping;
-            bool firstInputForSwappingToNumber = int.TryParse(Console.ReadLine(), out firstNumberForSwapping);
+            bool firstInputForSwappingToNumber = int.TryParse(Console.ReadLine(), out int firstNumberForSwapping);
             Console.WriteLine("Enter the second Number");
-            int secondNumberForSwapping;
-            bool secondInputForSwappingToNumber = int.TryParse(Console.ReadLine(), out secondNumberForSwapping);
+            bool secondInputForSwappingToNumber = int.TryParse(Console.ReadLine(), out int secondNumberForSwapping);
             if(firstInputForSwappingToNumber && secondInputForSwappingToNumber){
              Console.WriteLine("Before swapping: First Number = " + firstNumberForSwapping + " Second Number = " + secondNumberForSwapping);
             firstNumberForSwapping += secondNumberForSwapping;
