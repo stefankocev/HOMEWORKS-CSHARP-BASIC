@@ -13,11 +13,11 @@ namespace SEDC.Exercises
             {
                 for (int i = 1; i <= inputNumber; i++)
                 {
-                    if(i % 3 == 0)
+                    if (i % 3 == 0)
                     {
                         Console.WriteLine(i);
                     }
-                    
+
                 }
             }
             else
@@ -33,8 +33,8 @@ namespace SEDC.Exercises
             {
                 for (int i = 1; i <= inputNumberTwo; i++)
                 {
-                    if(i % 2 == 0 && i % 3 == 0)
-                    Console.WriteLine(i);
+                    if (i % 2 == 0 && i % 3 == 0)
+                        Console.WriteLine(i);
                 }
             }
             else
@@ -50,8 +50,8 @@ namespace SEDC.Exercises
                 int productOfDigits = 1;
                 while (inputNumberThree != 0)
                 {
-                    productOfDigits = productOfDigits * (inputNumberThree % 10);
-                    inputNumberThree = inputNumberThree / 10;
+                    productOfDigits *= (inputNumberThree % 10);
+                    inputNumberThree /= 10;
                 }
                 Console.WriteLine("Product of digits of this number is: " + productOfDigits);
             }
@@ -62,9 +62,9 @@ namespace SEDC.Exercises
             if (isNumberParsedFour)
             {
                 int sumOfAllEvens = 0;
-                for(int i = 1; i <= inputNumberFour; i++)
+                for (int i = 1; i <= inputNumberFour; i++)
                 {
-                    if(i % 2 == 0)
+                    if (i % 2 == 0)
                     {
                         sumOfAllEvens += i;
                     }
@@ -103,6 +103,71 @@ namespace SEDC.Exercises
                 }
                 Console.WriteLine("The sum of all numbers that are dividing with 5, from 1 to " + inputNumberSix + " is: " + sumOfAllNumbersDividingFive);
             }
+            #endregion
+            #region TASK VII
+            string[] arrayTaskSeven = new string[] { "a", "b", "c", "d" };
+            // CHECK BEFORE REVERSING
+            Console.WriteLine(arrayTaskSeven[0] + arrayTaskSeven[1] + arrayTaskSeven[2] + arrayTaskSeven[3]);
+            Array.Reverse(arrayTaskSeven);
+            // CHECK AFTER REVERSING
+            Console.WriteLine(arrayTaskSeven[0] + arrayTaskSeven[1] + arrayTaskSeven[2] + arrayTaskSeven[3]);
+            #endregion
+            #region TASK VIII
+            // PLEASE HELP ME IF YOU HAVE FREE TIME
+            #endregion
+            #region TASK IX
+            int sumOfDigits = 0;
+            for (int i = 1; i <= 1000; i++)
+            {
+                while (i != 0)
+                {
+                    sumOfDigits += i % 10;
+                    i /= 10;
+                }
+                Console.WriteLine(sumOfDigits);
+            }
+            #endregion
+            #region TASK X
+            // PLEASE HELP ME IF YOU HAVE FREE TIME !
+            #endregion
+            #region TASK XI
+            for (int i = 10; i <= 99; i++)
+            {
+                int numberKeeperTask11 = i;
+                int secondDigit = numberKeeperTask11 % 10;
+                int firstDigit = numberKeeperTask11 /= 10;
+                if (firstDigit > secondDigit)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            #endregion
+            #region TASK XII
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    string dividedBy3And5 = i.ToString("Fizz Buzz");
+                    Console.WriteLine(dividedBy3And5);
+
+                }
+                else if (i % 5 == 0)
+                {
+                    string dividedBy5 = i.ToString("Buzz");
+                    Console.WriteLine(dividedBy5);
+                }
+                else if (i % 3 == 0)
+                {
+                    string dividedBy3 = i.ToString("Fizz");
+                    Console.WriteLine(dividedBy3);
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+
+            }
+
             #endregion
             Console.ReadLine();
         }
