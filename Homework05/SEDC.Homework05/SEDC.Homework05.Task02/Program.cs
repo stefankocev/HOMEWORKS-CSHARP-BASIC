@@ -77,7 +77,7 @@ namespace SEDC.Homework05.Task02
             Car carTwo = new Car(secondCarModel, secondCarSpeed);
             carTwo.Driver = driverTwo;
 
-            var raceMethod = new RaceMethod();
+            var raceMethod = new RaceMethods();
             raceMethod.RaceCars(carOne, carTwo);
             Console.ReadLine();
         }

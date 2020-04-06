@@ -4,13 +4,14 @@ using System.Text;
 
 namespace SEDC.Homework05.Task02.Business.Services
 {
-    public class RaceMethod
+    public class RaceMethods
     {
 
         public void RaceCars(Car carOne, Car carTwo)
         {
-            int carOneSpeed = carOne.Speed * carOne.Driver.Skill;
-            int carTwoSpeed = carTwo.Speed * carTwo.Driver.Skill;
+
+            int carOneSpeed = carOne.CalculateSpeed();
+            int carTwoSpeed = carTwo.CalculateSpeed();
             if (carOneSpeed > carTwoSpeed)
                 Console.WriteLine($"Car no. 1 was faster.The car that won was {carOne.Model} and it was droven by {carOne.Driver.Name}, with a speed of {carOne.Speed}");
             else
