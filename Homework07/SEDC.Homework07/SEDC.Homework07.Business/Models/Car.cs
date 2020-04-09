@@ -24,22 +24,43 @@ namespace SEDC.Homework07.Business.Models
             Consumption = consumption;
             EngineType = engineType;
         }
-        public double Drive(double distance)
+        public string Drive(int distance, int energy, string name)
         {
-            double result = 0;
+            int drivingCapacity = 0;
             switch (Consumption)
             {
                 case Consumption.Economic:
-                    result = (1 * distance) / 10;
+                    drivingCapacity = energy * 10;
                     break;
                 case Consumption.Medium:
-                    result = (2 * distance) / 10;
+                    drivingCapacity = (energy * 10) / 2;
                     break;
                 case Consumption.High:
-                    result = (3 * distance) / 10;
+                    drivingCapacity = (energy * 10) / 3;
                     break;
             }
-            return result;
+            if (drivingCapacity < distance)
+            {
+                return $"You cannot drive more than {drivingCapacity} km. ";
+            }
+            else
+            {
+                int energyUsed = 0;
+                switch (Consumption)
+                {
+                    case Consumption.Economic:
+                        energyUsed = (1 * distance) / 10;
+                        break;
+                    case Consumption.Medium:
+                        energyUsed = (2 * distance) / 10;
+                        break;
+                    case Consumption.High:
+                        energyUsed = (3 * distance) / 10;
+                        break;
+                }
+                return $"You used {energyUsed} {name}.";
+            }
+           
         }
         public string PrintInfo()
         {

@@ -1,4 +1,5 @@
 ﻿using SEDC.Homework07.Enumeration;
+using SEDC.Homework07.Business.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,5 +34,6 @@ namespace SEDC.Homework07.Business.Models
                 Console.WriteLine($"Your car has been charged to {BatteryUsage}%");
             }
         }
+       
     }
 }

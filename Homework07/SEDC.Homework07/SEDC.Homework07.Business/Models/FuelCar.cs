@@ -15,7 +15,6 @@ namespace SEDC.Homework07.Business.Models
             FuelCapacity = fuelCapacity;
             CurrentFuel = currentFuel;
         }
-
         public void Refuel(int fuel)
         {
             int emptyTankCapacity = FuelCapacity - CurrentFuel;
@@ -31,6 +30,7 @@ namespace SEDC.Homework07.Business.Models
                 Console.WriteLine($"Your car have {CurrentFuel} litters in the tank.");
             }
         }
+
     }
 }
 
