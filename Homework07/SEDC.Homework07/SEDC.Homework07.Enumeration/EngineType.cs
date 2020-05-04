@@ -11,4 +11,5 @@ namespace SEDC.Homework07.Enumeration
         Diesel = 2,
         Electric = 3
     }
+
 }
