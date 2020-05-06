@@ -67,13 +67,14 @@ namespace SEDC.Homework08.Data
             }
             return productList;
         }   
-        public void GetProductsById()
+        public List<int> GetProductsById()
         {
+            var idList = new List<int>();
             foreach (var product in products)
             {
-                Console.WriteLine($"Id:{product.GetProductsId()}");
+                idList.Add(product.Id);
             }
-            
+            return idList;
         }
         public string GetProductsByPrice(int id)
         {
