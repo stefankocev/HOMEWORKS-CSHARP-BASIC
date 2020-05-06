@@ -34,21 +34,21 @@ namespace SEDC.Homework08
             //var productsByPartOfName = dataBase.GetProductsByPartOfName(Console.ReadLine());
             //PrintList(productsByPartOfName);
             //#endregion
-            #region GET PRODUCTS BY ID
-            var idList = dataBase.GetProductsById();
-            foreach (var id in idList)
-            {
-                Console.WriteLine(id);
-            }
-            #endregion
-            //#region GET PRODUCTS BY PRICE
-            //Console.WriteLine("Enter the product Id:");
-            //bool idInput = int.TryParse(Console.ReadLine(), out int id);
-            //if (!idInput)
-            //    Console.WriteLine("There was an error!");
-            //else
-            //    Console.WriteLine(dataBase.GetProductsByPrice(id));
+            //#region GET PRODUCTS BY ID
+            //var idList = dataBase.GetProductsById();
+            //foreach (var id in idList)
+            //{
+            //    Console.WriteLine(id);
+            //}
             //#endregion
+            #region GET PRODUCTS BY PRICE
+            Console.WriteLine("Enter the product Id:");
+            bool idInput = int.TryParse(Console.ReadLine(), out int id);
+            if (!idInput)
+                Console.WriteLine("There was an error!");
+            else
+                Console.WriteLine(dataBase.GetProductsByPrice(id));
+            #endregion
             //#region GET CHEAPEST PRODUCT
             //var cheapestProduct = dataBase.GetCheapestProduct();
             //Console.WriteLine($"Id: {cheapestProduct.Id}, Name: {cheapestProduct.Name}, Price: {cheapestProduct.Price}, Category: {cheapestProduct.Category}");

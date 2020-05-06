@@ -76,7 +76,7 @@ namespace SEDC.Homework08.Data
             }
             return idList;
         }
-        public string GetProductsByPrice(int id)
+        public int GetProductsByPrice(int id)
         {
             int result = 0;
             foreach (var product in products)
@@ -84,9 +84,7 @@ namespace SEDC.Homework08.Data
                 if (id == product.Id)
                  result = product.Price;
             }
-            if (result == 0)
-                return "There is not product with that ID ";
-            return $"The price is {result}";
+            return result;
         }
         public Product GetCheapestProduct()
         {
